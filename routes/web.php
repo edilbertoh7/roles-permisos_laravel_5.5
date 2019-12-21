@@ -28,19 +28,22 @@ si un usuario tiene los permisos o no*/
 Route::middleware(['auth'])->group(function()
 { 
 	//se  establecen las rutas para los roles
-	Route::post('roles/store','RoleController@store')->name('roles.store')->middleware('permission:roles.create');
+	Route::resource('roles','RoleController1');
+	 
+	 //se comenta las tutas para usar un controlador de recursos asociando un midleware
+	// Route::post('roles/store','RoleController1@store')->name('roles.store')->middleware('permission:roles.create');
 
-	Route::get('roles','RoleController@index')->name('roles.index')->middleware('permission:roles.index');
+	// Route::get('roles','RoleController1@index')->name('roles.index')->middleware('permission:roles.index');
 
-	Route::get('roles/create','RoleController@create')->name('roles.create')->middleware('permission:roles.create');
+	// Route::get('roles/create','RoleController1@create')->name('roles.create')->middleware('permission:roles.create');
 
-	Route::put('roles/{role}','RoleController@update')->name('roles.update')->middleware('permission:roles.edit');
+	// Route::put('roles/{role}','RoleController1@update')->name('roles.update')->middleware('permission:roles.edit');
 
-	Route::get('roles/{role}','RoleController@show')->name('roles.show')->middleware('permission:roles.show');
+	// Route::get('roles/{role}','RoleController1@show')->name('roles.show')->middleware('permission:roles.show');
 
-	Route::delete('roles/{role}','RoleController@destroy')->name('roles.destroy')->middleware('permission:roles.destroy');
+	// Route::delete('roles/{role}','RoleController1@destroy')->name('roles.destroy')->middleware('permission:roles.destroy');
 
-	Route::post('roles/{role}/edit','RoleController@edit')->name('roles.edit')->middleware('permission:roles.edit');
+	Route::get('roles/{role}/edit','RoleController1@edit')->name('roles.edit')->middleware('permission:roles.edit');
 	
 	//se establecen las rutas para los productos
 	

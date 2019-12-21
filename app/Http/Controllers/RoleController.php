@@ -13,8 +13,7 @@ class RolController extends Controller
      */
     public function index()
     {
-        //
-    }
+        return 'hola';    }
 
     /**
      * Show the form for creating a new resource.

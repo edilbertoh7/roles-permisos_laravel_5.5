@@ -7,8 +7,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Productos
-					@can('products.create')
-					<a href="{{ route('products.create') }}" class="btn btn-sm btn-primary pull-right">Crear</a>
+					@can('roles.create')
+					<a href="{{ route('roles.create') }}" class="btn btn-sm btn-primary pull-right">Crear</a>
 
 					@endcan
 
@@ -25,25 +25,25 @@
 						</thead>
 						<tbody>	
 
-							@foreach ( $products as $product)
+							@foreach ( $roles as $role)
 								<tr>	
-										<td>{{ $product->id }}</td>
-										<td>{{ $product->name }}</td>
+										<td>{{ $role->id }}</td>
+										<td>{{ $role->name }}</td>
 										<td width="10px">
-											@can('products.show')
-											<a href="{{ route('products.show',$product->id) }}"
+											@can('roles.show')
+											<a href="{{ route('roles.show',$role->id) }}"
 												class="btn btn-sm btn-default"> Ver</a>
 												@endcan
 										</td>
 											<td width="10px">
-											@can('products.edit')
-											<a href="{{ route('products.edit',$product->id) }}"
+											@can('roles.edit')
+											<a href="{{ route('roles.edit',$role->id) }}"
 												class="btn btn-sm btn-success"> Editar</a>
 												@endcan
 										</td>
 										<td width="10px">
-											@can('products.destroy')
-											{!! form::open(['route'=>['products.destroy',$product->id],
+											@can('roles.destroy')
+											{!! form::open(['route'=>['roles.destroy',$role->id],
 												'method'=>'DELETE']) !!}
 												<button class="btn btn-sm btn-danger">Eliminar</button>
 												{!! form::close() !!}
@@ -54,7 +54,7 @@
 							@endforeach
 						</tbody>
 					</table>
-					{{ $products->render() }}
+					{{ $roles->render() }}
 				</div>
 			</div>
 		</div>

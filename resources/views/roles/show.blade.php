@@ -5,12 +5,12 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading"> Productos </div>
+				<div class="panel-heading"> Roles </div>
 
 				<div class="panel-body">
-					{!! form::open(['route'=>'products.store']) !!}
-					@include('products.partials.form')
-					{!! form::close() !!}
+					<p><strong>Nombre  </strong>{{ $role->name }}</p>
+					<p><strong>slug  </strong>{{ $role->slug }}</p>
+					<p><strong>Descripción  </strong>{{ $role->description }}</p>
 				</div>
 			</div>
 		</div>
